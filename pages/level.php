@@ -47,6 +47,7 @@ if (isset($_GET['delete'])) {
                             <td> <?php echo $key + 1; ?></td>
                             <td> <?php echo $level['name']; ?></td>
                             <td>
+                                <a href="?page=add-role-menu&edit=<?php echo $level['id']; ?>" class="btn btn-warning"><i class="bi bi-plus"></i> Add role</a>
                                 <a href="?page=tambah-level&edit=<?php echo $level['id']; ?>" class="btn btn-success"><i class="bi bi-pencil"></i> Edit</a>
                                 <form class="d-inline" action="?page=level&delete=<?php echo $level['id']; ?>" method="post"
                                     onclick="return confirm('Are you sure for delete this?')">
