@@ -5,7 +5,7 @@
     <div class="d-flex align-items-center justify-content-between">
       <a href="?page=dashboard" class="logo d-flex align-items-center">
         <img src="assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">POS 2025</span>
+        <span class="d-none d-lg-block">Laundry</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
