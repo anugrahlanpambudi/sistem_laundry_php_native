@@ -10,11 +10,11 @@ if ($id) {
 
 // Proses ketika tombol update ditekan
 if (isset($_POST['update'])) {
-    $name = $_POST['service_name'];  // Mengambil nama layanan dari form
+    $name = $_POST['name'];  // Mengambil nama layanan dari form
     $price = $_POST['price'];        // Mengambil harga dari form
 
     // Update data layanan berdasarkan ID
-    $query = mysqli_query($config, "UPDATE services SET service_name='$name', price='$price' WHERE id='$id'");
+    $query = mysqli_query($config, "UPDATE services SET name='$name', price='$price' WHERE id='$id'");
 
     if ($query) {
         header('location:?page=service&update=success');
@@ -23,11 +23,11 @@ if (isset($_POST['update'])) {
 
 // Proses ketika tombol submit ditekan untuk menambah data layanan
 if (isset($_POST['submit'])) {
-    $name = $_POST['service_name'];  // Mengambil nama layanan dari form
+    $name = $_POST['name'];  // Mengambil nama layanan dari form
     $price = $_POST['price'];        // Mengambil harga dari form
 
     // Insert data layanan baru ke dalam database
-    $query = mysqli_query($config, "INSERT INTO services (service_name, price) VALUES('$name', '$price')");
+    $query = mysqli_query($config, "INSERT INTO services (name, price) VALUES('$name', '$price')");
 
     if ($query) {
         header('location:?page=service&add=success');
@@ -45,8 +45,8 @@ if (isset($_POST['submit'])) {
                 <form action="#" method="post">
                     <div class="mb-3">
                         <label for="" class="form-label">Name</label>
-                        <input type="text" name="service_name" class="form-control" placeholder="Enter service name"
-                            required value="<?php echo $rowEdit['service_name'] ?? ''; ?>"> <!-- Pastikan ini service_name -->
+                        <input type="text" name="name" class="form-control" placeholder="Enter service name"
+                            required value="<?php echo $rowEdit['name'] ?? ''; ?>"> <!-- Pastikan ini service_name -->
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Price</label>

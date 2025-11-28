@@ -1,11 +1,15 @@
 <?php
 // $query = mysqli_query($config, "SELECT c.name, `to`.* FROM trans_orders `to` LEFT JOIN customers c ON c.id = `to`.customer_id ORDER BY id DESC");
-$query = mysqli_query($config, "
-    SELECT c.customer_name, t.*
-    FROM trans_orders t
-    LEFT JOIN customers c ON c.id = t.customer_id
-    ORDER BY t.id DESC
-");
+$query = mysqli_query(
+    $config,
+    "
+    SELECT c.name, t.*
+FROM trans_orders t
+LEFT JOIN customers c ON c.id = t.customer_id
+ORDER BY t.id DESC
+
+",
+);
 
 $rows = mysqli_fetch_all($query, MYSQLI_ASSOC);
 
@@ -14,7 +18,7 @@ if (isset($_GET['delete'])) {
 
     $delete = mysqli_query($config, "DELETE FROM trans_orders WHERE id = $id");
     if ($delete) {
-        header("location:?page=order");
+        header('location:?page=order');
     }
 }
 
@@ -44,23 +48,23 @@ if (isset($_GET['delete'])) {
                         </tr>
                         <?php foreach ($rows as $key => $v) {
                         ?>
-                            <tr>
-                                <td class="text-center"><?php echo $key + 1 ?></td>
-                                <td><?php echo $v['order_code'] ?></td>
-                                <td><?php echo $v['order_end_date'] ?></td>
-                                <td><?php echo $v['order_total'] ?></td>
-                                <td><?php echo $v['order_tax'] ?></td>
-                                <td><?php echo $v['order_pay'] ?></td>
-                                <td><?php echo $v['order_change'] ?></td>
-                                <td class="text-center"><?php echo $v['order_status'] ?></td>
-                                <td class="text-center">
-                                    <a href="?page=tambah-product&edit=<?php echo $v['id'] ?>"
-                                        class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a>
-                                    <a href="?page=product&delete=<?php echo $v['id'] ?>"
-                                        onclick="return confirm('Are you sure you want to delete this data?')"
-                                        class="btn btn-warning btn-sm"><i class="bi bi-trash"></i></a>
-                                </td>
-                            </tr>
+                        <tr>
+                            <td class="text-center"><?php echo $key + 1; ?></td>
+                            <td><?php echo $v['order_code']; ?></td>
+                            <td><?php echo $v['order_end_date']; ?></td>
+                            <td><?php echo $v['order_total']; ?></td>
+                            <td><?php echo $v['order_tax']; ?></td>
+                            <td><?php echo $v['order_pay']; ?></td>
+                            <td><?php echo $v['order_change']; ?></td>
+                            <td class="text-center"><?php echo $v['order_status']; ?></td>
+                            <td class="text-center">
+                                <a href="pos/print.php?id=<?php echo $v['id']; ?>" class="btn btn-success btn-sm"><i
+                                        class="bi bi-printer"></i>Print</a>
+                                <a href="?page=order&delete=<?php echo $v['id']; ?>"
+                                    onclick="return confirm('Are you sure you want to delete this data?')"
+                                    class="btn btn-danger btn-sm"><i class="bi bi-trash"></i>Delete</a>
+                            </td>
+                        </tr>
                         <?php
                         }
                         ?>

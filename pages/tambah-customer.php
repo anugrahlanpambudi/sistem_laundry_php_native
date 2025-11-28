@@ -6,19 +6,19 @@ $customer = mysqli_fetch_assoc($selectCustomer);
 // var_dump($customer);
 
 if (isset($_POST['save'])) {
-    $name = $_POST['customer_name'];
+    $name = $_POST['name'];
     $phone = $_POST['phone'];
     $address = $_POST['address'];
-    $Insert = mysqli_query($config, "INSERT INTO customers (customer_name, phone, address) VALUES ('$name', '$phone', '$address')");
+    $Insert = mysqli_query($config, "INSERT INTO customers (name, phone, address) VALUES ('$name', '$phone', '$address')");
 
     header("location:?page=customer");
 }
 
 if (isset($_POST['update'])) {
-    $name = $_POST['customer_name'];
+    $name = $_POST['name'];
     $phone = $_POST['phone'];
     $address = $_POST['address'];
-    $update = mysqli_query($config, "UPDATE customers SET customer_name='$name', phone='$phone', address='$address' WHERE id = $id");
+    $update = mysqli_query($config, "UPDATE customers SET name='$name', phone='$phone', address='$address' WHERE id = $id");
 
     header('location:?page=customer');
 }
@@ -44,8 +44,8 @@ if (isset($_POST['update'])) {
                 <div class="card-body">
                     <form action="" method="post">
                         <label for="" class="form-label">Customer Name</label> <br>
-                        <input type="text" class="form-control w-50" name="customer_name"
-                            value="<?php echo $customer['customer_name'] ?? '' ?>" required>
+                        <input type="text" class="form-control w-50" name="name"
+                            value="<?php echo $customer['name'] ?? '' ?>" required>
                         <label for="" class="form-label">Phone</label> <br>
                         <input type="text" class="form-control w-50" name="phone"
                             value="<?php echo $customer['phone'] ?? '' ?>" required>

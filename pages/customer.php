@@ -48,7 +48,7 @@ if (isset($_GET['delete'])) {
                             ?>
                             <tr>
                                 <td><?php echo $key + 1 ?></td>
-                                <td><?php echo $customer['customer_name'] ?></td>
+                                <td><?php echo $customer['name'] ?></td>
                                 <td><?php echo $customer['phone'] ?></td>
                                 <td><?php echo $customer['address'] ?></td>
                                 <td>

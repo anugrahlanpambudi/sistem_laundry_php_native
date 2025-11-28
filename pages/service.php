@@ -46,7 +46,7 @@ if (isset($_GET['delete'])) {
                             ?>
                         <tr>
                             <td> <?php echo $key + 1; ?></td>
-                            <td> <?php echo $service['service_name']; ?></td>
+                            <td> <?php echo $service['name']; ?></td>
                             <td><?php echo 'Rp. ' . number_format($service['price'], 2, ',', '.') . ' per KG'; ?></td>
                             <td>
                                 <a href="?page=tambah-service&edit=<?php echo $service['id']; ?>" class="btn btn-success"><i class="bi bi-pencil"></i> Edit</a>
