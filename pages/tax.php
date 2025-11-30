@@ -1,4 +1,6 @@
 <?php 
+
+
 $query = mysqli_query($config, "SELECT * FROM taxs ORDER BY id DESC");
 $rows = mysqli_fetch_all($query, MYSQLI_ASSOC);
 

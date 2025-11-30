@@ -1,5 +1,6 @@
 <?php
 
+
 $id = isset($_GET['edit']) ? $_GET['edit'] : '';
 $selectCustomer = mysqli_query($config, "SELECT * FROM customers WHERE id = '$id'");
 $customer = mysqli_fetch_assoc($selectCustomer);

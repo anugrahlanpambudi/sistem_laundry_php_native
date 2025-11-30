@@ -1,5 +1,6 @@
 <?php
 
+
 $id = isset($_GET['edit']) ? $_GET['edit'] : '';
 $queryEdit = mysqli_query($config, "SELECT * FROM users WHERE id='$id'");
 $rowEdit = mysqli_fetch_assoc($queryEdit);

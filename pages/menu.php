@@ -1,4 +1,6 @@
 <?php
+
+
 $query = mysqli_query($config, 'SELECT * FROM menus ORDER BY `order` ASC');
 
 $menus = mysqli_fetch_all($query, MYSQLI_ASSOC);

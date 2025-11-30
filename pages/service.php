@@ -1,5 +1,6 @@
 <?php
 
+
 $query = mysqli_query($config, 'SELECT * FROM services');
 $services = mysqli_fetch_all($query, MYSQLI_ASSOC);
 

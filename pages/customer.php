@@ -1,4 +1,5 @@
 <?php
+
 $q_customers = mysqli_query($config, "SELECT  * FROM customers");
 $customers = mysqli_fetch_all($q_customers, MYSQLI_ASSOC);
 // var_dump($customers);
