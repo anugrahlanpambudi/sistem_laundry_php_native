@@ -144,6 +144,8 @@ async function processPayment() {
         grandTotal,
         customer_id,
         end_date,
+        pay,
+        change,
       }),
     });
     const data = await res.json();

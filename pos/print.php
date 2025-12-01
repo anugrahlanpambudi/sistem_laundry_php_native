@@ -170,11 +170,11 @@ $rowDetails = mysqli_fetch_all($queryDetails, MYSQLI_ASSOC);
         <div class="payment">
             <div class="total-row">
                 <span>Cash</span>
-                <span>Rp. <?php echo number_format($row['pay'], 0, ',', '.')?></span>
+                <span>Rp. <?php echo number_format($row['order_pay'], 0, ',', '.')?></span>
             </div>
             <div class="total-row">
                 <span>Change</span>
-                <span>Rp. <?php echo number_format($row['calculateChange'], 0, ',', '.')?></span>
+                <span>Rp. <?php echo number_format($row['order_change'], 0, ',', '.')?></span>
             </div>
         </div>
     </div>
