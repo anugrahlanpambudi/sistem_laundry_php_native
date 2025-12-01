@@ -31,9 +31,9 @@ if (isset($_GET['payment'])) {
     $orderCode = $data['order_code'];
     $end_date = $data['end_date'];
     $customer_id = $data['customer_id'];
-    $orderChange = $data['order_change'];
-    $orderPay = $data['order_pay'];
-    $orderStatus = 1;
+    $orderPay = $data['pay'];
+    $orderChange = $data['change'];
+    $orderStatus = 0;
     $subtotal  = $data['subtotal'];
 
     try {

@@ -1,4 +1,6 @@
 <?php
+
+
 $id = isset($_GET['edit']) ? $_GET['edit'] : '';
 $selectMenu = mysqli_query($config, "SELECT * FROM menus WHERE id = '$id'");
 $menu = mysqli_fetch_assoc($selectMenu);

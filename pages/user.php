@@ -1,5 +1,6 @@
 <?php
 
+
 $query = mysqli_query(
     $config,
     "SELECT l.name as level_name, u.* FROM users u LEFT JOIN levels l ON l.id = u.level_id ORDER BY u.id DESC"
@@ -23,9 +24,7 @@ if (isset($_GET['delete'])) {
                     <a href="?page=tambah-user" class="btn btn-primary">
                         <i class="bi bi-plus-square"> Add User</i>
                     </a>
-                     <a href="?page=user-restore" class="btn btn-primary">
-                        <i class="bi bi-arrow-repeat"> Restore</i>
-                    </a>
+                     
                 </div>
                 <table class="table" table-bordered table-striped datatable>
                     <thead>
