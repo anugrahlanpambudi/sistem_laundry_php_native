@@ -124,7 +124,7 @@ $time = date("H:i:s", strtotime($createdAt));
 <body onload="window.print()">
     <div class="struck-page">
         <div class="header">
-            <img src="../assets/img/logo-print.png" alt="Logo">
+            <img src="../assets/img/laundry-machine.png" alt="Logo">
             <h2>Struct Payment</h2>
             <p>Jl Benhil Karet Jakarta Pusat</p>
             <p>0858-7878-5858</p>

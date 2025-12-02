@@ -58,7 +58,7 @@ if (isset($_GET['pickup'])) {
                             <td class="text-center">
                                 <?php 
                                     if ($v['order_status'] == 0) 
-                                        echo "<span class='badge bg-secondary'>Belum diambil</span>";
+                                        echo "<span class='badge bg-secondary'>Sedang di proses</span>";
                                     else 
                                         echo "<span class='badge bg-success'>Sudah Diambil</span>";
                                 ?>

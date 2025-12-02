@@ -20,7 +20,6 @@ if (!$level_id) {
 if ($level_id == 1) {
     goto SKIP_ROLE_CHECK;
 }
-
 // Ambil menu sesuai level pengguna
 $sql = "SELECT menus.link 
         FROM menus 
